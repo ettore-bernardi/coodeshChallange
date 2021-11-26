@@ -1,9 +1,8 @@
 require 'uri'
 require 'net/http'
 
-module SpaceFlight 
-  class ArticleService 
-
+module SpaceFlight
+  class ArticleService
     def initialize
       quantity_reponse = Net::HTTP.get_response(URI('https://api.spaceflightnewsapi.net/v3/articles/count'))
       quantity = quantity_reponse.body
@@ -16,8 +15,8 @@ module SpaceFlight
       @articles.each do |article|
         @article_field = Article.find_by(article_id: article['id'])
         if @article_field.present?
-          #update 
-          puts('pulado') 
+          # update
+          puts('pulado')
         else
           @article_field = Article.new(
             article_id: article['id'],
@@ -46,10 +45,9 @@ module SpaceFlight
             )
             @event_field.save
           end
-        end        
+        end
         puts article
       end
     end
-
   end
 end

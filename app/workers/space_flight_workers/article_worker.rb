@@ -1,8 +1,7 @@
 require 'uri'
 require 'net/http'
-module SpaceFlightWorkers 
+module SpaceFlightWorkers
   class ArticleWorker
-
     def initialize
       @url = URI('https://api.spaceflightnewsapi.net/v3/articles')
     end
@@ -13,6 +12,5 @@ module SpaceFlightWorkers
         puts article
       end
     end
-
   end
 end
