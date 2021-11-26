@@ -8,6 +8,8 @@ one:
   newsSite: MyString
   sumary: MyString
   publishedAt: MyString
+  article: one
+  event: one
 
 two:
   featured: false
@@ -17,3 +19,5 @@ two:
   newsSite: MyString
   sumary: MyString
   publishedAt: MyString
+  article: two
+  event: two
