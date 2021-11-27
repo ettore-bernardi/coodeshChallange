@@ -1,3 +1,3 @@
 task daily_articles: :environment do
-  ::SpaceFlight::ArticleService.new.create_articles_on_db
+  ::SpaceFlight::ArticleService.new.create_daily_articles
 end

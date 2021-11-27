@@ -10,41 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_211_125_204_806) do
+ActiveRecord::Schema.define(version: 2021_11_25_204806) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'articles', force: :cascade do |t|
-    t.string 'article_id'
-    t.boolean 'featured'
-    t.string 'title'
-    t.string 'url'
-    t.string 'imageUrl'
-    t.string 'newsSite'
-    t.string 'summary'
-    t.string 'publishedAt'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "articles", force: :cascade do |t|
+    t.string "article_id"
+    t.boolean "featured"
+    t.string "title"
+    t.string "url"
+    t.string "imageUrl"
+    t.string "newsSite"
+    t.string "summary"
+    t.string "publishedAt"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'events', force: :cascade do |t|
-    t.string 'event_id'
-    t.string 'provider'
-    t.bigint 'article_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['article_id'], name: 'index_events_on_article_id'
+  create_table "events", force: :cascade do |t|
+    t.string "event_id"
+    t.string "provider"
+    t.bigint "article_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_events_on_article_id"
   end
 
-  create_table 'launches', force: :cascade do |t|
-    t.string 'launch_id'
-    t.string 'provider'
-    t.bigint 'article_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['article_id'], name: 'index_launches_on_article_id'
+  create_table "launches", force: :cascade do |t|
+    t.string "launch_id"
+    t.string "provider"
+    t.bigint "article_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_launches_on_article_id"
   end
 
-  add_foreign_key 'events', 'articles'
-  add_foreign_key 'launches', 'articles'
+  add_foreign_key "events", "articles"
+  add_foreign_key "launches", "articles"
 end
