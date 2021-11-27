@@ -1,5 +1,5 @@
 task daily_articles: :environment do
-  rails c
+  run rails console
   ::SpaceFlight::ArticleService.new.create_articles_on_db
   exit
 end
