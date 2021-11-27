@@ -2,7 +2,7 @@ class Api::V1::ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
   
   def index
-    @articles = Article.all
+    @articles = Article.limit(limit).offset(params[:offset])
     render json: @articles, each_resializer: ArticleSerializer
   end
 
@@ -50,6 +50,14 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   private
+
+  def limit
+    if params[:limit] == 'all'
+      nil
+    else
+      params.fetch(:limit,10).to_i      
+    end
+  end
 
   def set_article
     @article = Article.find_by(article_id: params[:id])
