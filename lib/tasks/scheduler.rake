@@ -1,3 +1,5 @@
 task daily_articles: :environment do
-  puts 'ola'
+  rails c
+  ::SpaceFlight::ArticleService.new.create_articles_on_db
+  exit
 end
