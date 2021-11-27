@@ -1,6 +1,7 @@
 # Projeto Space Flight News Api
 Neste projeto foi desenvolvida um RestAPI que utiliza os dados do projeto Space Flight News API.
 
+[Apresentação do desafio](https://www.loom.com/share/69e39728dd9445c6bfad6e807e4c51b9)
 
 ## Tecnologias usadas
 

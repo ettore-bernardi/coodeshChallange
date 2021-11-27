@@ -85,10 +85,5 @@ module SpaceFlight
         end
       end
     end
-
-
-
-
-
   end
 end
