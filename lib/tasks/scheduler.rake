@@ -1,3 +1,3 @@
-task daily_articles: :envioriment do
+task daily_articles: :environment do
   puts 'ola'
 end
