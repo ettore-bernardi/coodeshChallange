@@ -10,7 +10,7 @@ class Api::V1::ArticlesController < ApplicationController
     if @article.present?
       render json: @article, serializer: ArticleSerializer
     else
-      render json: { status: 'ERROR', message: "Article with id: #{params[:id]} does not exists" }, status: :unprocessable_entity
+      render json: { status: 'batata', message: "Article with id: #{params[:id]} does not exists" }, status: :unprocessable_entity
     end
   end
 
